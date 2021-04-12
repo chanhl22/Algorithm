@@ -20,7 +20,7 @@ public class B6588 {
 			int input = sc.nextInt();
 			if(input == 0)
 				break;
-			for (int i = 0; i < prime.length; i++) {
+			for (int i = 1; i < prime.length; i++) {
 				int value = prime[i];
 				if (check[input - value]==false) {
 					System.out.println(input + " = " + value + " + " + (input-value));
