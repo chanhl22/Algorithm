@@ -1,8 +1,8 @@
 import java.util.*;
 
 public class B15649 {
-	static boolean[] c = new boolean[10];
-	static int[] a = new int[10];
+	static boolean[] c = new boolean[9];
+	static int[] a = new int[9];
 	
 	static void go(int index, int n, int m) {
 		if (index == m) {
@@ -12,11 +12,11 @@ public class B15649 {
 			System.out.println();
 			return ;
 		}
-		for (int i = 0; i < n; i++) {
+		for (int i = 1; i <= n; i++) {
 			if (c[i]) 
 				continue;
 			c[i] = true;
-			a[index] = i + 1;
+			a[index] = i;
 			go(index + 1, n, m);
 			c[i] = false;
 		}
