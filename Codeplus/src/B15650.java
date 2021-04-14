@@ -10,6 +10,7 @@ public class B15650 {
 				System.out.print(a[i]+" ");
 			}
 			System.out.println();
+			return ;
 		}
 		for (int i = start; i <= n; i++) {
 			if (c[i]) 
