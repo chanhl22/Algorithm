@@ -25,9 +25,7 @@ public class B14889 {
 		int ans = -1;
 		first.add(index);
 		int t1 = go(index + 1, first, second);
-		if (t1 != -1)
-			ans = t1;
-		if(t1 != -1 && ans > t1) {
+		if(ans == -1 || t1 != -1 && ans > t1) {
 			ans = t1;
 		}
 		first.remove(first.size()-1);	
