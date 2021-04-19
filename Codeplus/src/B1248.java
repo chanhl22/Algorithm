@@ -1,35 +1,33 @@
 import java.util.*;
-public class Main {
+public class B1248 {
     static int n;
     static int[][] sign;
     static int[] ans;
-    static boolean ok() {
-        for (int i=0; i<n; i++) {
-            int sum = 0;
-            for (int j=i; j<n; j++) {
-                sum += ans[j];
-                if (sign[i][j] == 0) {
-                    if (sum != 0) return false;
-                } else if (sign[i][j] > 0) {
-                    if (sum <= 0) return false;
-                } else if (sign[i][j] < 0) {
-                    if (sum >= 0) return false;
-                }
+    static boolean check(int index) {
+        int sum = 0;
+        for (int i=index; i>=0; i--) {
+            sum += ans[i];
+            if (sign[i][index] == 0) {
+                if (sum != 0) return false;
+            } else if (sign[i][index] < 0) {
+                if (sum >= 0) return false;
+            } else if (sign[i][index] > 0) {
+                if (sum <= 0) return false;
             }
         }
         return true;
     }
     static boolean go(int index) {
         if (index == n) {
-            return ok();
+            return true;
         }
         if (sign[index][index] == 0) {
             ans[index] = 0;
-            return go(index+1);
+            return check(index) && go(index+1);
         }
         for (int i=1; i<=10; i++) {
             ans[index] = sign[index][index]*i;
-            if (go(index+1)) return true;
+            if (check(index) && go(index+1)) return true;
         }
         return false;
     }
