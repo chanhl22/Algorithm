@@ -1,26 +1,61 @@
 import java.util.*;
 
+class Person{
+	private String name;
+
+	public Person(String name) {
+		super();
+		this.name = name;
+	}
+
+	public Person() {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Person other = (Person) obj;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		return true;
+	}
+	
+}
+
 public class Test {
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-//		int n = sc.nextInt();
-//		char[] a = new char[10];
-//		for (int i = 0; i < n; i++) {
-//			a[i] = sc.next().toCharArray()[0];
-//		}
-//		for (int i = 0; i < a.length; i++) {
-//			System.out.println(a[i]);
-//		}
-//		String str = sc.next();
-		char[] a = new char[2];
-//		a = str.toCharArray();
-		for (int i = 0; i < 2; i++) {
-			a[i] = sc.next().toCharArray()[0];			
-		}
+		Person a = new Person("Noah");
+		Person b = new Person("Noah");
+	
+		System.out.println(a == b);
+	
+		String a2 = "noah";
+		String b2 = "noah";
+		System.out.println(a2 == b2);
 		
-		for (int i = 0; i < a.length; i++) {
-			System.out.println(a[i]);
-		}
-		
+		String a3 = new String("Noah");
+		String b3 = new String("Noah");
+		System.out.println(a3 == b3);
+		HashSet<String> a1 = new HashSet<String>();
+		a1.add(a2);
+		a1.add(b2);
+		System.out.println(a1.size());
 	}
 }
