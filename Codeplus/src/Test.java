@@ -64,3 +64,11 @@ public class Test {
 		   System.out.println(list2.get(t)[0]);    
 	}
 }
+
+//import java.util.*;
+//
+//public class Test {
+//	public static void main(String[] args) {
+//		
+//	}
+//}
