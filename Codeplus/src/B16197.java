@@ -13,22 +13,31 @@ public class B16197 {
     	}
     	boolean fail1 = false;
     	boolean fail2 = false;
-    	if (x1<0 && x1>=n && y1<0 && y1>m) fail1 = true;
-    	if (x2<0 && x2>=n && y2<0 && y2>m) fail2 = true;
+    	if (x1<0 || x1>=n || y1<0 || y1>=m) fail1 = true;
+    	if (x2<0 || x2>=n || y2<0 || y2>=m) fail2 = true;
     	if (fail1 && fail2) return -1;
     	if (fail1 || fail2) {
-    		System.out.println("test" + step);
     		return step;
     	}
-    	int ans = 0;
-    	int count = -1;
+    	int ans = -1;
     	for (int i = 0; i < 4; i++) {
 			int nx1 = x1 + dx[i];
 			int ny1 = y1 + dy[i];
 			int nx2 = x2 + dx[i];
 			int ny2 = y2 + dy[i];
-			count = go (step + 1, nx1, ny1, nx2, ny2);
-			if (ans < count && count != -1) {
+			//행렬 안에 있거나 #이거나
+			//벽이 있다면 동전은 가만히 있기 때문 (하나만 움직일 수도 있다.)
+			if (0 <= nx1 && nx1 < n && 0 <= ny1 && ny1 < m && arr[nx1][ny1] == '#') {
+                nx1 = x1;
+                ny1 = y1;
+            }
+            if (0 <= nx2 && nx2 < n && 0 <= ny2 && ny2 < m && arr[nx2][ny2] == '#') {
+                nx2 = x2;
+                ny2 = y2;
+            }
+			int count = go (step + 1, nx1, ny1, nx2, ny2);
+			if (count == -1) continue;
+			if (ans > count || ans == -1) {
 				ans = count;
 			}
 		}
