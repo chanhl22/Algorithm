@@ -1,6 +1,5 @@
 import java.util.*;
 
-
 class Piece2 {
 	int no;
 	int dir;
@@ -31,7 +30,7 @@ public class B17837 {
 		for (int i = index; i < a[x][y].size(); i++) {
 			Piece2 p = a[x][y].get(i);
 			a[nx][ny].add(p);
-			where[p.no] = new Pair10(nx, ny, a[x][y].size() - 1);
+			where[p.no] = new Pair10(nx, ny, a[nx][ny].size() - 1);
 		}
 		a[x][y] = new ArrayList<>(a[x][y].subList(0, index));
 	}
@@ -97,8 +96,14 @@ public class B17837 {
 					if (board[nx][ny] == 0) {
 						go(a, where, x, y, nx, ny, index);
 					} else if (board[nx][ny] == 1) {
-//						List<Piece2> temp = a[x][y].subList(index, a[x][y].size());
-						Collections.reverse(a[x][y]);
+						//여기서 새로 만들면 안되는 이유가
+						//temp라는 새로운 리스트를 만들어서 넘기는게 아닌 a[][] arraylist의 일부를 가져와서 임시로 담고
+						//단지 a[][] arraylist 일부분만 순서를 바꾸는 것이기 때문이다. ex) 1234 -> 1243
+						//a[][] arraylist를 그대로 사용!!!!
+						//새로 만들어서 넘겨주는게 아님, 즉 메모리를 생각할 필요가 전혀 없음, a[][] arraylist를 그대로 넘겨주기 때문
+						//위의 go함수는 새로 만들어주는게 맞음
+						List<Piece2> temp = a[x][y].subList(index, a[x][y].size());
+						Collections.reverse(temp);
 						go(a, where, x, y, nx, ny, index);
 					}
 					if (a[nx][ny].size() >= 4) {
