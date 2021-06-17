@@ -90,9 +90,13 @@ public class B17780 {
 					dir = a[x][y].get(0).dir;
 					nx = x + dx[dir];
 					ny = y + dy[dir];
+					// 다시 범위를 체크해줘야하는데 방향을 바꾸고 이동하는데 또 체스판 밖으로 넘어갈 수 있기 때문이다.
+					// 그림으로 나와있는 문제 예시 말 4번을 보면 이해가 된다.
 					if (0 <= nx && nx < n && 0 <= ny && ny < n) {
+						// 흰
 						if (board[nx][ny] == 0) {
 							go(a, where, x, y, nx, ny);
+						// 빨
 						} else if (board[nx][ny] == 1) {
 							Collections.reverse(a[x][y]);
 							go(a, where, x, y, nx, ny);
