@@ -8,10 +8,7 @@ public class B17822 {
 		} else {
 			test.addAll(Arrays.asList(a[x]));
 		}
-		for(int[] t : test) {
-			System.out.println(test);
-		}
-		//System.out.println(test);
+		System.out.println(test);
 	}
 
 	public static void main(String[] args) {
