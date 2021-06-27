@@ -15,6 +15,7 @@ public class B19236 {
 
     static int go(int[][] board, int[][] dir, int x, int y, int d) {
         int ans = 0;
+        // 물고기 이동
         for (int who = 1; who <= 16; who++) {
             for (int i = 0; i < 4; i++) {
                 boolean ok = false;
@@ -43,6 +44,7 @@ public class B19236 {
                 if (ok) break;
             }
         }
+        // 상어 이동
         int sx = x + dx[d];
         int sy = y + dy[d];
         while (sx >= 0 && sx < 4 && sy >= 0 && sy < 4) {
