@@ -124,6 +124,7 @@ cmake-build-*/
 out/
 .idea/
 
+
 # mpeltonen/sbt-idea plugin
 .idea_modules/
 
