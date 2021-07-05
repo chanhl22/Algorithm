@@ -1,3 +1,4 @@
+import java.io.*;
 import java.util.*;
 
 public class B16946 {
@@ -38,16 +39,17 @@ public class B16946 {
         group_size.add(cnt);
     }
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        n = sc.nextInt();
-        m = sc.nextInt();
-        sc.nextLine();
+    public static void main(String[] args) throws IOException {
+        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        String[] st = bf.readLine().split(" ");
+        n = Integer.parseInt(st[0]);
+        m = Integer.parseInt(st[1]);
         a = new int[n][m];
         check = new boolean[n][m];
         group = new int[n][m];
         for (int i = 0; i < n; i++) {
-            String s = sc.nextLine();
+            String s = bf.readLine();
             for (int j = 0; j < m; j++) {
                 a[i][j] = s.charAt(j) - '0';
                 group[i][j] = -1;
@@ -63,7 +65,7 @@ public class B16946 {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
                 if (a[i][j] == 0) {
-                    System.out.print("0");
+                    bw.write("0");
                 } else {
                     HashSet<Integer> near = new HashSet<>();
                     for (int k = 0; k < 4; k++) {
@@ -79,10 +81,11 @@ public class B16946 {
                     for (int g : near) {
                         ans += group_size.get(g);
                     }
-                    System.out.print(ans % 10);
+                    bw.write(String.valueOf(ans%10));
                 }
             }
-            System.out.println();
+            bw.write("\n");
         }
+        bw.flush();
     }
 }
