@@ -1,7 +1,5 @@
-class Solution {
+class Solution1 {
     public int solution(String s) {
-        int answer = 0;
-
         s = s.replace("zero","0");
         s = s.replace("one","1");
         s = s.replace("two","2");
@@ -13,7 +11,7 @@ class Solution {
         s = s.replace("eight","8");
         s = s.replace("nine","9");
 
-        answer = Integer.valueOf(s);
+        int answer = Integer.valueOf(s);
 
         return answer;
     }
@@ -21,7 +19,7 @@ class Solution {
 
 public class K81301 {
     public static void main(String[] args) {
-        Solution sol = new Solution();
+        Solution1 sol = new Solution1();
         int ans = sol.solution("one4seveneight");
         System.out.println(ans);
         ans = sol.solution("23four5six7");
