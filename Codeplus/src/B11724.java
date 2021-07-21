@@ -18,6 +18,18 @@ public class B11724 {
 			}
 		}
 	}
+//	Another Solution
+//	public static void dfs(ArrayList<Integer>[] a, boolean[] c, int x) {
+//		if (c[x]) {
+//			return;
+//		}
+//		c[x] = true;
+//		for (int y : a[x]) {
+//			if (c[y] == false) {
+//				dfs(a, c, y);
+//			}
+//		}
+//	}
 	
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
