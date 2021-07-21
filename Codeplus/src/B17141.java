@@ -79,6 +79,22 @@ public class B17141 {
         go(index + 1, cnt);
     }
 
+//    ----- Another Solution -----
+//    static void go(int index, int cnt) {
+//        if (index == v.size()) {
+//            if (cnt == m) {
+//                bfs();
+//            }
+//        } else {
+//            int x = v.get(index).x;
+//            int y = v.get(index).y;
+//            a[x][y] = 3;
+//            go(index+1, cnt+1);
+//            a[x][y] = 0;
+//            go(index+1, cnt);
+//        }
+//    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         n = sc.nextInt();
