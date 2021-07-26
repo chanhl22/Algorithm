@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Scanner;
 
 public class B2143 {
@@ -15,6 +18,37 @@ public class B2143 {
             b[i] = sc.nextInt();
         }
 
+        ArrayList<Integer> first = new ArrayList<>();
+        ArrayList<Integer> second = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            int sum = 0;
+            for (int j = i; j < n; j++) {
+                sum += a[j];
+                first.add(sum);
+            }
+        }
+        for (int i = 0; i < m; i++) {
+            int sum = 0;
+            for (int j = i; j < m; j++) {
+                sum += b[j];
+                second.add(sum);
+            }
+        }
 
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int x : second) {
+            if (map.containsKey(x)) {
+                int temp = map.get(x);
+                map.put(x, temp + 1);
+            } else {
+                map.put(x, 1);
+            }
+        }
+        long ans = 0;
+        for (int num : first) {
+            if (map.containsKey(t - num))
+            ans += map.get(t-num);
+        }
+        System.out.println(ans);
     }
 }
