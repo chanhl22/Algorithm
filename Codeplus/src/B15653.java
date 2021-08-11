@@ -51,7 +51,7 @@ public class B15653 {
             bx = temp.bx;
             by = temp.by;
             for (int i = 0; i < 4; i++) {
-                
+
             }
         }
     }
