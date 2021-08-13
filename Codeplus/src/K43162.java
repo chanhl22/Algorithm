@@ -32,8 +32,8 @@ public class K43162 {
         int ans = 0;
         //ans = sol.solution(3, new int[][]{{1, 1, 0}, {1, 1, 0}, {0, 0, 1}});
         //ans = sol.solution(3, new int[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}});
-        ans = sol.solution(3, new int[][]{{1, 1, 0}, {1, 1, 1}, {0, 1, 1}});
-        //ans = sol.solution(4, new int[][]{{1, 0, 0, 1}, {0, 1, 0, 0}, {0, 0, 1, 0}, {1, 0, 0, 1}});
+        //ans = sol.solution(3, new int[][]{{1, 1, 0}, {1, 1, 1}, {0, 1, 1}});
+        ans = sol.solution(4, new int[][]{{1, 0, 0, 1}, {0, 1, 0, 0}, {0, 0, 1, 0}, {1, 0, 0, 1}});
         System.out.println(ans);
     }
 }
