@@ -18,7 +18,7 @@ class Solution11 {
         int cnt = 0;
         int req_cnt = 0;
         if (sticky) {
-            
+
 //            boolean[] check = new boolean[requests.length + 1];
 //            for (int i = 0; i < servers; i++) {
 //                for (int j = 0; j < servers; j++) {
