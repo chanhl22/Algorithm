@@ -71,6 +71,10 @@ public class B17779 {
             min = Math.min(record[i], min);
         }
         ans = max - min;
+        /*
+        Arrays.sort(record);
+        ans = cnt[4] - cnt[0];
+         */
         return ans;
     }
 
