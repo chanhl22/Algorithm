@@ -43,6 +43,16 @@ public class B17085 {
                         }
                     }
                 }
+                /*
+                for (int s1=0;; s1++) {
+                    if (x1-s1 < 0 || x1+s1 >= n) break;
+                    if (y1-s1 < 0 || y1+s1 >= m) break;
+                    if (a[x1-s1][y1] != '*' || a[x1+s1][y1] != '*') break;
+                    if (a[x1][y1-s1] != '*' || a[x1][y1+s1] != '*') break;
+                    a[x1-s1][y1] = '#'; a[x1+s1][y1] = '#';
+                    a[x1][y1-s1] = '#'; a[x1][y1+s1] = '#';
+                }
+                 */
             }
         }
         System.out.println(ans);
