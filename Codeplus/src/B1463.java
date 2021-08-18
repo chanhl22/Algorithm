@@ -1,3 +1,4 @@
+//Bottom-up
 //import java.util.*;
 //public class B1463 {
 //
@@ -20,6 +21,7 @@
 //
 //}
 
+//Top-Down
 import java.util.*;
 public class B1463 {
 	static int[] d;
