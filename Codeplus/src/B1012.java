@@ -41,17 +41,17 @@ public class B1012 {
                 int x = sc.nextInt();
                 a[x][y] = 1;
             }
-            int cnt = 0;
+            int ans = 0;
             boolean check[][] = new boolean[n][m];
             for (int i = 0; i < n; i++) {
                 for (int j = 0; j < m; j++) {
                     if (a[i][j] == 1 && check[i][j] == false) {
                         bfs(i, j, check, n, m, a);
-                        cnt++;
+                        ans++;
                     }
                 }
             }
-            System.out.println(cnt);
+            System.out.println(ans);
         }
     }
 }
