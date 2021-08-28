@@ -6,11 +6,11 @@ import java.util.Collections;
 import java.util.Scanner;
 
 public class B1038 {
-    static void go(long num, int index, ArrayList<Long> a) {
+    static void go(long num, ArrayList<Long> a) {
         a.add(num);
         for (long i = 0; i < 10; i++) {
             if (num % 10 > i) {
-                go((num * 10) + i, index + 1, a);
+                go((num * 10) + i, a);
             }
         }
         return;
@@ -25,7 +25,7 @@ public class B1038 {
             System.exit(0);
         }
         for (int i = 0; i < 10; i++) {
-            go(i, 1, a);
+            go(i, a);
         }
         Collections.sort(a);
         System.out.println(a.get(n));
