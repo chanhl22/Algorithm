@@ -1,3 +1,11 @@
+### 새로 리펙토링 했습니다! &nbsp; https://github.com/chanhl22/Algorithm-ver.2  
+### 앞으로는 Algorithm-ver.2에 업데이트합니다.
+---
+
+<br/>
+<br/>
+<br/>
+
 # Algorithm
 ---
 <img align='left' src="http://mazassumnida.wtf/api/v2/generate_badge?boj=lch9502">
